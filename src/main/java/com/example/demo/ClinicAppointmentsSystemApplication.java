@@ -8,7 +8,7 @@ public class ClinicAppointmentsSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClinicAppointmentsSystemApplication.class, args);
-		System.out.println("Hellow");
+		System.out.println("Program is running");
 	}
 
 }

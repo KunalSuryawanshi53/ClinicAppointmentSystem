@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Appointment {
     @Id
@@ -14,7 +16,9 @@ public class Appointment {
 
     private String patientName;
     private String doctorName;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+
 
     // Getters and Setters
     public Long getId() {

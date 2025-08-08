@@ -54,21 +54,41 @@
             text-align: center;
         }
 
+        #searchInput {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 30%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
         }
 
-        th, td {
+        thead th {
+            background-color: #005a9e;
+            color: white;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        tbody td {
             padding: 12px;
             border-bottom: 1px solid #ddd;
             text-align: center;
-        }
-
-        th {
-            background-color: #005a9e;
-            color: white;
         }
 
         tr:hover {
@@ -119,19 +139,24 @@
         <p th:text="${success}"></p>
     </div>
 
-    <table>
-        <thead>
+    <!-- ✅ Search bar -->
+    <input type="text" id="searchInput" placeholder="🔍 Search appointments...">
+
+    <!-- ✅ Scrollable table -->
+    <div class="table-container">
+        <table>
+            <thead>
             <tr>
-                <th>S.No.</th> <!-- Replaced ID with S.No. -->
+                <th>S.No.</th>
                 <th>Patient</th>
                 <th>Doctor</th>
                 <th>Date</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr th:each="appointment, iterStat : ${appointments}">
-                <td th:text="${iterStat.index + 1}"></td> <!-- Serial number instead of ID -->
+                <td th:text="${iterStat.index + 1}"></td>
                 <td th:text="${appointment.patientName}"></td>
                 <td th:text="${appointment.doctorName}"></td>
                 <td th:text="${appointment.date}"></td>
@@ -142,9 +167,23 @@
                        class="action-link delete">❌ Delete</a>
                 </td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<!-- ✅ JavaScript for search -->
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        const input = this.value.toLowerCase();
+        const rows = document.querySelectorAll("tbody tr");
+
+        rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(input) ? "" : "none";
+        });
+    });
+</script>
 
 </body>
 </html>
