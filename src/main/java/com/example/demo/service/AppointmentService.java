@@ -17,8 +17,7 @@ public class AppointmentService {
     }
 
     public void save(Appointment appointment) {
-        // If id is null, it's a new appointment; else, update existing
-        repo.save(appointment); // JPA automatically handles create vs update
+        repo.save(appointment); 
     }
 
     public void deleteById(Long id) {
