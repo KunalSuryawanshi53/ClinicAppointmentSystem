@@ -16,20 +16,20 @@ public class AppointmentController {
         this.service = service;
     }
 
-    // ✅ Home page
+    //  Home page
     @GetMapping("/")
     public String home() {
         return "index";
     }
 
-    // ✅ Show appointment form
+    // Show appointment form
     @GetMapping("/form")
     public String showForm(Model model) {
         model.addAttribute("appointment", new Appointment());
         return "form";
     }
 
-    // ✅ Save or update appointment
+    // Save or update appointment
     @PostMapping("/save")
     public String saveAppointment(@ModelAttribute Appointment appointment, RedirectAttributes redirectAttributes) {
         boolean isUpdate = appointment.getId() != null;
@@ -38,14 +38,14 @@ public class AppointmentController {
         return "redirect:/appointments";
     }
 
-    // ✅ Show all appointments
+    // Show all appointments
     @GetMapping("/appointments")
     public String viewAppointments(Model model) {
         model.addAttribute("appointments", service.getAll());
         return "appointments";
     }
 
-    // ✅ Edit appointment
+    // Edit appointment
     @GetMapping("/appointments/edit/{id}")
     public String editAppointment(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Appointment appointment = service.getById(id);
@@ -57,7 +57,7 @@ public class AppointmentController {
         return "form";
     }
 
-    // ✅ Delete appointment
+    // Delete appointment
     @GetMapping("/delete/{id}")
     public String deleteAppointment(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         service.deleteById(id);

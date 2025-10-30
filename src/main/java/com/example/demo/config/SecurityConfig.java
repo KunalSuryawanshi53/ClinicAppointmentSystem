@@ -17,11 +17,11 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/", true)   // ✅ यामुळे login नंतर home page उघडतो
+                        .defaultSuccessUrl("/", true)   //  login after home page open
                         .permitAll()
                 )
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/login?logout=true") // ✅ logout नंतर success msg दिसतो
+                        .logoutSuccessUrl("/login?logout=true") // logout after success msg show
                         .permitAll()
                 );
 
