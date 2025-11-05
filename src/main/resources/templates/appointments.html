@@ -109,18 +109,32 @@
             margin-right: 5px;
         }
 
-        .edit:hover {
-            background-color: #218838;
-        }
-
         .delete {
             background-color: #dc3545;
             color: white;
         }
 
-        .delete:hover {
-            background-color: #c82333;
+        /* ✅ Updated Buttons (same as Book Appointment Back button) */
+        .bottom-buttons {
+            text-align: center;
+            margin-top: 25px;
         }
+
+        .btn-nav {
+            display: inline-block;
+            background-color: #5A5454; /* same grey tone */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ❌ Hover effect removed */
     </style>
 </head>
 <body>
@@ -169,6 +183,12 @@
             </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- ✅ Navigation buttons -->
+    <div class="bottom-buttons">
+        <a th:href="@{/}" class="btn-nav">⬅ Back to Home</a>
+        <a th:href="@{/form}" class="btn-nav">📅 Book Appointment</a>
     </div>
 </div>
 
