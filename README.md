@@ -48,15 +48,18 @@ This project demonstrates **secure authentication, authorization, and logout fun
 
 ---
 
-## 📸 Application Screenshots
+## 🔄 Application Flow
+Login → Home → Book Appointment → View Appointments
 
-### 🏠 Home Page
-![Home](images/home.png)
+## 📸 Application Screenshots
 
 ### 🔐 Login Page
 ![Login](images/login.png)
 
-### 📅 Booking Form
+### 🏠 Home Page
+![Home](images/home.png)
+
+### 📝 Booking Form
 ![Form](images/form.png)
 
 ### 📋 Appointments List
