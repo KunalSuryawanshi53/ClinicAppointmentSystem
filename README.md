@@ -50,12 +50,17 @@ This project demonstrates **secure authentication, authorization, and logout fun
 
 ## 📸 Screenshots
 
-- 🏠 **Home Page**
-- 📅 **Book Appointment Form**
-- 📋 **Appointments List**
-- 🔐 **Login Page**
+### 🏠 Home Page
+![Home](images/home.png)
 
-(You can upload screenshots later and link them here using Markdown)
+### 📅 Booking Form
+![Form](images/form.png)
+
+### 📋 Appointments List
+![List](images/list.png)
+
+### 🔐 Login Page
+![Login](images/login.png)
 
 ---
 
