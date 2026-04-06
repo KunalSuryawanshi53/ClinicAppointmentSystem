@@ -48,19 +48,19 @@ This project demonstrates **secure authentication, authorization, and logout fun
 
 ---
 
-## 📸 Screenshots
+## 📸 Application Screenshots
 
 ### 🏠 Home Page
 ![Home](images/home.png)
+
+### 🔐 Login Page
+![Login](images/login.png)
 
 ### 📅 Booking Form
 ![Form](images/form.png)
 
 ### 📋 Appointments List
 ![List](images/list.png)
-
-### 🔐 Login Page
-![Login](images/login.png)
 
 ---
 
